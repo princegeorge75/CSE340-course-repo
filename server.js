@@ -26,6 +26,12 @@ app.set('view engine', 'ejs');
 // Tell Express where to find your templates
 app.set('views', path.join(__dirname, 'src/views'));
 
+// Provide current request path to all templates for active nav highlighting
+app.use((req, res, next) => {
+    res.locals.currentPath = req.path;
+    next();
+});
+
 /**
  * Routes
  */
@@ -42,6 +48,11 @@ app.get('/organizations', async (req, res) => {
 app.get('/projects', async (req, res) => {
     const title = 'Service Projects';
     res.render('projects', { title });
+});
+
+app.get('/categories', async (req, res) => {
+    const title = 'Project Categories';
+    res.render('categories', { title });
 });
 
 app.listen(PORT, () => {
