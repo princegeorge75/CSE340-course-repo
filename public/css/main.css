@@ -63,7 +63,7 @@ footer {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
 }
 
@@ -96,6 +96,18 @@ footer {
 .tile-list li strong {
     display: block;
     margin-bottom: 0.5rem;
+}
+
+.tile-list li span,
+.tile-list li em {
+    display: block;
+    margin-top: 0.35rem;
+}
+
+.tile-list li em {
+    font-style: normal;
+    color: #f2efff;
+    font-size: 0.95rem;
 }
 
 main a {

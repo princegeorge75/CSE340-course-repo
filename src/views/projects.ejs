@@ -1,12 +1,16 @@
 <%- include('partials/header') %>
-    <main>
-        <h1><%= title %></h1>
-        <hr>
-        <h2>Upcoming Service Projects</h2>
-        <ul class="tile-list">
-            <li>Park Cleanup <br> Join us to clean up local parks and make them beautiful!</li>
-            <li>Food Drive <br> Help collect and distribute food to those in need.</li>
-            <li>Community Tutoring <br> Volunteer to tutor students in various subjects.</li>
-        </ul>
-    </main>
+
+<main>
+    <h1><%= title %></h1>
+    <ul class="tile-list">
+        <% projects.forEach(project => { %>
+        <li>
+            <strong><%= new Date(project.project_date).toLocaleDateString() %></strong>
+            <span><%= project.title %></span>
+            <em><%= project.organization_name %></em>
+        </li>
+        <% }) %>
+    </ul>
+</main>
+
 <%- include('partials/footer') %>
